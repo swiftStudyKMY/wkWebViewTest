@@ -71,7 +71,7 @@ class ViewController: UIViewController {
 extension ViewController:UISearchBarDelegate{
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        ₩self.request(url: self.sBar.text!)
+        self.request(url: self.sBar.text!)
         
         self.view.endEditing(true)
         
