@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="wkWebViewTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m5M-qc-auw">
+                                <rect key="frame" x="0.0" y="100" width="414" height="713"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tcg-xF-G07">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" image="chevron.left" catalog="system" style="done" id="pcT-8z-PWG">
+                                        <connections>
+                                            <action selector="backBtn:" destination="BYZ-38-t0r" id="pts-6p-IzR"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem image="chevron.right" catalog="system" style="done" id="f7k-SC-FIX">
+                                        <connections>
+                                            <action selector="forwardBtn:" destination="BYZ-38-t0r" id="9zC-Kd-oF2"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="done" systemItem="refresh" id="ecS-z9-a0h">
+                                        <connections>
+                                            <action selector="refreshBtn:" destination="BYZ-38-t0r" id="vkm-lg-wXg"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem title="Item" image="house" catalog="system" style="done" id="hr1-d5-4J3">
+                                        <connections>
+                                            <action selector="homeBtn:" destination="BYZ-38-t0r" id="HKh-zS-uRv"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="action" id="fWI-da-C7O"/>
+                                </items>
+                            </toolbar>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GYv-Jm-GzL">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="7TS-BL-uvq">
+                                <rect key="frame" x="197" y="438" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Tcg-xF-G07" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0JO-te-bkn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Tcg-xF-G07" secondAttribute="bottom" id="0Mg-lB-bCw"/>
+                            <constraint firstItem="GYv-Jm-GzL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bkt-ar-Fts"/>
+                            <constraint firstItem="7TS-BL-uvq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CSE-NK-I0w"/>
+                            <constraint firstItem="m5M-qc-auw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="N4i-iJ-HJS"/>
+                            <constraint firstItem="Tcg-xF-G07" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Ucb-GF-Z89"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m5M-qc-auw" secondAttribute="trailing" id="aJR-i2-SYs"/>
+                            <constraint firstItem="m5M-qc-auw" firstAttribute="top" secondItem="GYv-Jm-GzL" secondAttribute="bottom" id="dQd-Kp-wJw"/>
+                            <constraint firstItem="GYv-Jm-GzL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hzv-Jz-LsX"/>
+                            <constraint firstItem="7TS-BL-uvq" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="i2d-aX-doV"/>
+                            <constraint firstAttribute="trailing" secondItem="GYv-Jm-GzL" secondAttribute="trailing" id="pOD-NH-2g1"/>
+                            <constraint firstItem="Tcg-xF-G07" firstAttribute="top" secondItem="m5M-qc-auw" secondAttribute="bottom" id="rKV-eB-dch"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="sBar" destination="GYv-Jm-GzL" id="0Ye-bZ-Dj9"/>
+                        <outlet property="spinner" destination="7TS-BL-uvq" id="Ao9-cS-2gC"/>
+                        <outlet property="tBar" destination="Tcg-xF-G07" id="e8P-Gr-mB1"/>
+                        <outlet property="wv" destination="m5M-qc-auw" id="OfR-bS-agc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="129.91071428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="96" height="128"/>
+        <image name="chevron.right" catalog="system" width="96" height="128"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+    </resources>
+</document>
