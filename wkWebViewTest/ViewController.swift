@@ -27,7 +27,12 @@ class ViewController: UIViewController {
         self.wv.uiDelegate = self
         self.wv.navigationDelegate = self
         
+        //제츠처 추가 ( 뒤로, 앞으로 )
+        self.wv.allowsBackForwardNavigationGestures = true
+        
         self.request(url: "https://801sanae.github.io")
+        
+        
     }
 
     func request(url : String){
@@ -37,6 +42,7 @@ class ViewController: UIViewController {
     @IBAction func backBtn(_ sender: Any) {
         if self.wv.canGoBack {
             self.wv.goBack()
+            self.wv.reload()
         } else{
             print("no back page")
         }
@@ -44,6 +50,7 @@ class ViewController: UIViewController {
     @IBAction func forwardBtn(_ sender: Any) {
         if self.wv.canGoForward {
             self.wv.goForward()
+            self.wv.reload()
         } else {
             print("no forward page")
         }

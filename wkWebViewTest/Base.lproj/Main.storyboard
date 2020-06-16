@@ -46,7 +46,9 @@
                                             <action selector="homeBtn:" destination="BYZ-38-t0r" id="HKh-zS-uRv"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="action" id="fWI-da-C7O"/>
+                                    <barButtonItem style="plain" systemItem="action" id="fWI-da-C7O">
+                                        <inset key="imageInsets" minX="0.0" minY="-1" maxX="0.0" maxY="0.0"/>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="GYv-Jm-GzL">
