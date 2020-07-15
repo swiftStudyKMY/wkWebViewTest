@@ -26,6 +26,7 @@
    <br>
    webView:decidePolicyForNavigationAction:decisionHandler: 과 유사 하나 WKWebpagePreferences 항목 추가
    ContentMode 옵션 추가되어 컨텐츠의 유형 및 로드된 결과에 적용되는 레이아웃, 렌더링 조정에 영향
+   
    ```swift
     func webView(_ webView: WKWebView,
      	decidePolicyFor navigationAction: WKNavigationAction,
@@ -33,6 +34,7 @@
      	 decisionHandler: @escaping (WKNavigationActionPolicy, WKWebpagePreferences) -> Void) {
     }
    ```   
+   
  - webViewWebContentProcessDidTerminate
    <br>웹뷰의 웹 콘텐츠 프로세스가 종료 될 때 호출됩니다.
  - didStartProvisionalNavigation
