@@ -24,7 +24,8 @@
    ```   
  - webView:decidePolicyForNavigationAction:preferences:decisionHandler:
    <br>
-
+   webView:decidePolicyForNavigationAction:decisionHandler: 과 유사 하나 WKWebpagePreferences 항목 추가
+   ContentMode 옵션 추가되어 컨텐츠의 유형 및 로드된 결과에 적용되는 레이아웃, 렌더링 조정에 영향
    ```swift
     func webView(_ webView: WKWebView,
      	decidePolicyFor navigationAction: WKNavigationAction,
@@ -76,4 +77,6 @@
 	 * [https://verypurple.tistory.com/10](https://verypurple.tistory.com/10)
 	 * [https://littleshark.tistory.com/56](https://littleshark.tistory.com/56)
 	 * [http://blog.naver.com/PostView.nhn?blogId=xodhks_0113&logNo=220925597541&parentCategoryNo=&categoryNo=29&viewDate=&isShowPopularPosts=false&from=postView](http://blog.naver.com/PostView.nhn?blogId=xodhks_0113&logNo=220925597541&parentCategoryNo=&categoryNo=29&viewDate=&isShowPopularPosts=false&from=postView)
+	 * [https://littleshark.tistory.com/56](https://littleshark.tistory.com/56)
+	 
 	
