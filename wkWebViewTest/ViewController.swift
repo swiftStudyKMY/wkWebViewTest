@@ -23,27 +23,6 @@ class ViewController: UIViewController {
         super.loadView()
         
         print("loadView() call")
-        
-//        let webConfig = WKWebViewConfiguration()
-//        let userSrcipt = WKUserScript(source: "callTest()", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-//
-//        let contentController = WKUserContentController()
-//        contentController.addUserScript(userSrcipt)
-//        webConfig.userContentController = contentController
-//
-//        self.wv = WKWebView(frame: .zero, configuration: webConfig)
-        
-        
-//
-//        let contentController = WKUserContentController()
-//        let config = WKWebViewConfiguration()
-//
-//        let userScript = WKUserScript(source: "callTest()", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-//        contentController.addUserScript(userScript)
-//
-//        contentController.add(self, name: "callbackHandler")
-//
-//        config.userContentController = contentController
     }
     
     override func viewDidLoad() {
@@ -58,10 +37,7 @@ class ViewController: UIViewController {
         //제츠처 추가 ( 뒤로, 앞으로 )
         self.wv.allowsBackForwardNavigationGestures = true
         
-
-        
-        self.request(url: "http://127.0.0.1:8081/")
-//        self.request(url: "https://801sanae.github.io")
+        self.request(url: "https://801sanae.github.io")
         
         
     }
@@ -219,14 +195,14 @@ extension ViewController:WKNavigationDelegate{
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
         
         print("runJavaScriptAlertPanelWithMessage()")
-        
-        print("-->\(message)")
-        
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "OK", style: .default) { action in completionHandler()}
-        alert.addAction(ok)
-        
-        self.present(alert,animated: true, completion: nil)
+//        
+//        print("-->\(message)")
+//        
+//        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+//        let ok = UIAlertAction(title: "OK", style: .default) { action in completionHandler()}
+//        alert.addAction(ok)
+//        
+//        self.present(alert,animated: true, completion: nil)
         
     }
     
@@ -252,10 +228,10 @@ extension ViewController:WKScriptMessageHandler{
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
         print("userContentController() call")
         
-        if message.name == "callbackHandler" {
-            print(message.body)
-            abc()
-        }
+//        if message.name == "callbackHandler" {
+//            print(message.body)
+//            abc()
+//        }
     }
 
 }
