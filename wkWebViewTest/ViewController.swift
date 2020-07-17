@@ -19,9 +19,37 @@ class ViewController: UIViewController {
     // hides when stopped
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
+    override func loadView() {
+        super.loadView()
+        
+        print("loadView() call")
+        
+//        let webConfig = WKWebViewConfiguration()
+//        let userSrcipt = WKUserScript(source: "callTest()", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+//
+//        let contentController = WKUserContentController()
+//        contentController.addUserScript(userSrcipt)
+//        webConfig.userContentController = contentController
+//
+//        self.wv = WKWebView(frame: .zero, configuration: webConfig)
+        
+        
+//
+//        let contentController = WKUserContentController()
+//        let config = WKWebViewConfiguration()
+//
+//        let userScript = WKUserScript(source: "callTest()", injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+//        contentController.addUserScript(userScript)
+//
+//        contentController.add(self, name: "callbackHandler")
+//
+//        config.userContentController = contentController
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        print("viewDidLoad() call")
         
         self.sBar.delegate = self
         self.wv.uiDelegate = self
@@ -30,7 +58,10 @@ class ViewController: UIViewController {
         //제츠처 추가 ( 뒤로, 앞으로 )
         self.wv.allowsBackForwardNavigationGestures = true
         
-        self.request(url: "https://801sanae.github.io")
+
+        
+        self.request(url: "http://127.0.0.1:8081/")
+//        self.request(url: "https://801sanae.github.io")
         
         
     }
@@ -73,6 +104,9 @@ class ViewController: UIViewController {
         }
     }
     
+    func abc(){
+        print("abc call..")
+    }
 }
 
 extension ViewController:UISearchBarDelegate{
@@ -102,11 +136,13 @@ extension ViewController:WKNavigationDelegate{
      */
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         print("decidePolicyFor navigationAction() call")
-        print("\(navigationAction.request.url!.absoluteString)")
         
         let chkUrl : String = navigationAction.request.url!.absoluteString
         
         if chkUrl.hasPrefix("https:")||chkUrl.hasPrefix("http:") {
+            
+            print("\(navigationAction.request.url!.absoluteString)")
+            
             if chkUrl.contains("801sanae") {
                 decisionHandler(.allow)
             }
@@ -179,14 +215,27 @@ extension ViewController:WKNavigationDelegate{
         print("error Msg ==\(error.localizedDescription)")
     }
     
+    // AlertPanel
     func webView(_ webView: WKWebView, runJavaScriptAlertPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping () -> Void) {
+        
         print("runJavaScriptAlertPanelWithMessage()")
+        
+        print("-->\(message)")
+        
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .default) { action in completionHandler()}
+        alert.addAction(ok)
+        
+        self.present(alert,animated: true, completion: nil)
+        
     }
     
+    // ConfirmPanel
     func webView(_ webView: WKWebView, runJavaScriptConfirmPanelWithMessage message: String, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (Bool) -> Void) {
         print("runJavaScriptConfirmPanelWithMessage()")
     }
     
+    // TextInputPanel
     func webView(_ webView: WKWebView, runJavaScriptTextInputPanelWithPrompt prompt: String, defaultText: String?, initiatedByFrame frame: WKFrameInfo, completionHandler: @escaping (String?) -> Void) {
         print("runJavaScriptTextInputPanelWithPrompt()")
     }
@@ -198,10 +247,15 @@ extension ViewController:WKUIDelegate{
 }
 
 extension ViewController:WKScriptMessageHandler{
-    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        
-    }
-    
-    
-}
 
+    //JS-> nativeCall
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        print("userContentController() call")
+        
+        if message.name == "callbackHandler" {
+            print(message.body)
+            abc()
+        }
+    }
+
+}

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4790BB4224C19622002FA3A1 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4790BB4124C19622002FA3A1 /* ViewController2.swift */; };
 		EBDDC5972494A9F1003C365E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDDC5962494A9F1003C365E /* AppDelegate.swift */; };
 		EBDDC5992494A9F1003C365E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDDC5982494A9F1003C365E /* SceneDelegate.swift */; };
 		EBDDC59B2494A9F1003C365E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBDDC59A2494A9F1003C365E /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4790BB4124C19622002FA3A1 /* ViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		EBDDC5932494A9F1003C365E /* wkWebViewTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = wkWebViewTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBDDC5962494A9F1003C365E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBDDC5982494A9F1003C365E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 				EBDDC59F2494A9F2003C365E /* Assets.xcassets */,
 				EBDDC5A12494A9F2003C365E /* LaunchScreen.storyboard */,
 				EBDDC5A42494A9F2003C365E /* Info.plist */,
+				4790BB4124C19622002FA3A1 /* ViewController2.swift */,
 			);
 			path = wkWebViewTest;
 			sourceTree = "<group>";
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBDDC59B2494A9F1003C365E /* ViewController.swift in Sources */,
+				4790BB4224C19622002FA3A1 /* ViewController2.swift in Sources */,
 				EBDDC5972494A9F1003C365E /* AppDelegate.swift in Sources */,
 				EBDDC5992494A9F1003C365E /* SceneDelegate.swift in Sources */,
 			);
